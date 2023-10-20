@@ -1,31 +1,28 @@
 def centurize_year(year):
+  """
+  returns which century the given year is in
+  """
   century = 0
-  
-  if year <0:
+  #section for checking which era the year is in
+  if year < 0:
     year = -year
-    era  = 'BCE'
-  else: 
+    era = 'BCE'
+  else:
     era = 'ACE'
-    
-  if year >= 0 and year <=99:
-    century = (year / 100) + 1
-  elif year % 99 == 0:
-    century = year / 100
-  elif year % 99 != 0:
-    century = (year / 100) + 1
-  century = int(century)
-  
+
+  century = year // 100 + 1 # finds the century (╯°□°)╯︵ ┻━┻ 
+
+  #section for concatenation of th, st, nd and rd
   if century % 100 > 9 and century % 100 < 21:
     suffix = 'th'
   else:
-    last_digit = century % 10
-    if last_digit == 1:
+    if century % 10 == 1:
       suffix = "st"
-    elif last_digit == 2:
+    elif century % 10 == 2:
       suffix = 'nd'
-    elif last_digit == 3:
+    elif century % 10 == 3:
       suffix = 'rd'
     else:
       suffix = 'th'
-  
+
   return str(century) + suffix + ' century ' + era
