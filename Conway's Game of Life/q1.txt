@@ -1,0 +1,142 @@
+~/Lab-7-VictorFelipe9$ python
+Python 3.9.17 (main, Jun  6 2023, 09:45:13) 
+[GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> numbers = [1, 2, 3, 4, 5]
+>>> numbers
+[1, 2, 3, 4, 5]
+>>> words = ["hello", "what", "world", "python"]
+>>> words
+['hello', 'what', 'world', 'python']
+>>> mixed_list = [1, True, "False", 3.141623123]
+>>> mixed_list
+[1, True, 'False', 3.141623123]
+>>> mixed_list[1]
+True
+>>> mixed_list is True
+False
+>>> mixed_list is False
+False
+>>> mixed_list == True
+False
+>>> mixed_list[1] == True
+True
+>>> mixed_list[0] == True
+True
+>>> mixed_list[3] == True
+False
+>>> mixed_list[2] == True
+False
+>>> 
+>>> sentence = words[0] + words[2]
+>>> sentence
+'helloworld'
+>>> sentence = " ".join[word]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'word' is not defined
+>>> sentence = " ".join[words[0], words[2]]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'builtin_function_or_method' object is not subscriptable
+>>> sentence = " ".join[words]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'builtin_function_or_method' object is not subscriptable
+>>> joined_sentence = ' '.join(words[0],words[2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: str.join() takes exactly one argument (2 given)
+>>> joined_sentence = ' '.join([words[0],words[2]])
+>>> joined_sentence
+'hello world'
+>>> sentence = joined_sentence.split("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: empty separator
+>>> sentence = joined_sentence.split(" ")
+>>> sentence
+['hello', 'world']
+>>> sentence[1] = words[3]
+>>> sentence
+['hello', 'python']
+>>> sliced_word_list = words[1:3]
+>>> sliced_word_list
+['what', 'world']
+>>> lowercase_a_to_z = [chr(i) for i in range(97,123)]
+>>> lowercase_a_to_z
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+>>> uppwercase_a_to_z = [chr(i) for i in range(65,91)]
+>>> uppwercase_a_to_z
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+>>> uppercase_a_to_z = uppwercase_a_to_z
+>>> uppercase_a_to_z
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+>>> alphabet = lowercase_a_to_z + uppercase_a_to_z
+>>> alphabet
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

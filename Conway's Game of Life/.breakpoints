@@ -1,0 +1,46 @@
+{
+  "files": {
+    "conway/q3.py": [
+      {
+        "id": "43acd3f3-f43b-47b1-ada9-2e88b27d6b98",
+        "line": 33,
+        "version": 4161,
+        "index": 1343
+      },
+      {
+        "id": "77b6ceea-a7a8-4e2a-88ff-2436a5a60c87",
+        "line": 55,
+        "version": 4161,
+        "index": 1905
+      },
+      {
+        "id": "cdb6be74-ada1-4b8c-aa75-99126df3c07e",
+        "line": 72,
+        "version": 4161,
+        "index": 2623
+      }
+    ],
+    "conway/world.py": [
+      {
+        "id": "cd202da5-ce65-4570-90c1-685489416c5b",
+        "line": 76,
+        "version": 774,
+        "index": 2747
+      }
+    ],
+    "main.py": [
+      {
+        "id": "6e080aa8-fb10-418b-989d-32d0baa54dd6",
+        "line": 2,
+        "version": 81,
+        "index": 47
+      },
+      {
+        "id": "6e1b86aa-4194-494b-8df0-ea49108f0b99",
+        "line": 5,
+        "version": 81,
+        "index": 85
+      }
+    ]
+  }
+}
