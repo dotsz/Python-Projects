@@ -1,3 +1,3 @@
 # My-Python-Projects
-Python Projects \n
+Python Projects
 Just a repo of labs from my Intro to Programming class
