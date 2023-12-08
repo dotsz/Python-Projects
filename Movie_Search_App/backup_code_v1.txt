@@ -1,0 +1,118 @@
+# import requests
+import movieapp.api as api
+import q1
+
+my_key = "4a20872c"
+
+
+def start():
+  """
+  Precondition: my_key is a valid API key. 
+  Postcondition: Returns a detailed information of a chosen movie/series/episode.
+  """
+  print("To quit, press Ctrl+c \n1: movie\n2: series\n3: episode\n")
+
+  def get_search_type():
+    """
+    Precondition: Input must be within the range of 1-3 integer, otherwise prompt input again.
+    Postcondition: Returns the search type.
+    """
+    search_type = input("What do you want to search for? (Enter a number)\n")
+    if search_type == "1":
+      return "movie"
+    elif search_type == "2":
+      return "series"
+    elif search_type == "3":
+      return "episode"
+    else:
+      print("Invalid Input. Try again.\n")
+      return get_search_type()
+
+  search_type = get_search_type(
+  )  # recursive call to ensure input is within range
+
+  def do_search():
+    """
+    Postcondition: Returns the search result. Prompts again if no result is found. 
+    """
+    search_string = input("\nWhat do you want to search for? \n")
+    search_result = api.search({
+        "apikey": my_key,
+        "s": search_string,
+        "type": search_type
+    })
+    if len(search_result) <= 0:
+      print('Search Result = 0. Try another keyword?\n')
+      return do_search()
+    else:
+      return search_result
+
+  search_result = do_search(
+  )  #recursive call in case search results in empty list
+
+  for index, item in enumerate(
+      search_result):  #prints at most 10 results based on
+    print(f'{index+1}: {item["Title"]} ({item["Year"]})')
+
+  def get_imdb_id():
+    """
+    Precondition: Input must be within the range of 1-10 integer, otherwise prompt input again.
+    Postcondition: Returns the imdb id of the chosen movie/series/episode.
+    """
+    selected = input(
+        f"\nEnter the number of the {search_type} to view details for (Enter a number)\n"
+    )
+    if search_result[int(selected)] in search_result:
+      return search_result[int(selected)]["imdbID"]
+    else:
+      print("Invalid Input. Try again.\n")
+      return get_imdb_id()
+
+  selected_id = get_imdb_id()
+
+  retrieved_info = api.get_info({"apikey": my_key, "i": selected_id})
+
+  detailed_output = f"{retrieved_info['Title']} is a {retrieved_info['Runtime']} {retrieved_info['Genre']}. "
+
+  for key, value in retrieved_info.items():  #need better solution for this
+    if key == "Title" or key == "Genre" or key == "Runtime" or key == "Awards" or key == "Ratings":
+      continue
+    elif value != "N/A":
+      if key == "Actor":
+        detailed_output += f"starring {value}. "
+      elif key == "Director":
+        detailed_output += f"Directed by {value}. "
+      elif key == "Writer":
+        detailed_output += f"Written by {value}. "
+      elif key == "Released":
+        detailed_output += f"Released in {value}. "
+      elif key == "Plot":
+        detailed_output += f"{value}. "
+
+  print(detailed_output)  #need better solution for this
+  if retrieved_info['Awards'] != '':
+    print(f"Awards: \n{retrieved_info['Awards']}")
+  if retrieved_info['Ratings'] != '':
+    print(f"Ratings: ")
+    for rating in retrieved_info['Ratings']:
+      print(f"{rating['Source']}: {rating['Value']}")
+
+  print("\n")
+
+
+# print("\n\n")
+# print(api.get_info({"apikey":"4a20872c", "i":"tt9140554"}))
+
+# pseudo / notes
+# use search function
+# Search produces : { Title, Year , imdbID, type, Poster (img url) }
+
+# make a dictionary appending title as key, and ID as value # didn't need to do
+# print titles
+# after asking input use get_info function to get the details
+# make a dictionary, if the value is N/A, don't include on output #didn't do
+
+# to do, fix getimdb
+# fix output, it needs to be more dynamic
+
+# use memo concept

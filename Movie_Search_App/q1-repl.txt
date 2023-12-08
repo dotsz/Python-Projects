@@ -1,0 +1,69 @@
+Paste a copy of your Part 1 REPL session here
+
+~/Lab-8-VictorFelipe9$ python 
+Python 3.10.11 (main, Apr  4 2023, 22:10:32) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> ali = ("Al G. Rhythm", ["Al", ""], "2000-01-01", {
+...     "street": "123 Awesome Ave",
+...     "city": "Anytown",
+...     "prov": "AB",
+...     "postcode": "A4B2C3"
+... })
+>>> billie = ("Beau Leon", ["Beau", "Bee"], "1998-09-23", {
+...     "street": "456 Beatiful Blvd",
+...     "city": "Belleville",
+...     "prov": "BC",
+...     "postcode": "B4M6F2"
+... })
+>>> charlie = ("Charlie Char", ["Chuck", "Char"], "2005-02-27", {
+...     "street": "789 Curvy Cresc",
+...     "city": "Cityville",
+...     "prov": "QC",
+...     "postcode": "C3B2M1"
+... })
+>>> dave = ("Dick-Shawn Airy", ["Shawn", "D-Shawn"], "1969-10-31", {
+...     "street": "321 Daring Dr",
+...     "city": "Dicton",
+...     "prov": "NB",
+...     "postcode": "D2L4S9"
+... })
+>>> dave[0] = "Jolly Roger"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> billie[1].append("Bow")
+>>> billie
+('Beau Leon', ['Beau', 'Bee', 'Bow'], '1998-09-23', {'street': '456 Beatiful Blvd', 'city': 'Belleville', 'prov': 'BC', 'postcode': 'B4M6F2'})
+>>> billi[1] = ['Bu', 'Bow', 'Beau']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'billi' is not defined. Did you mean: 'billie'?
+>>> billie[1] = ['Bu', 'Bow', 'Beau']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> ali[3][prov] = 'ONT'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'prov' is not defined
+>>> ali[3]['prov'] = 'ONT'
+>>> ali
+('Al G. Rhythm', ['Al', ''], '2000-01-01', {'street': '123 Awesome Ave', 'city': 'Anytown', 'prov': 'ONT', 'postcode': 'A4B2C3'})
+>>> ali[3]['prov'] = 'ON'
+>>> dave[3] = { "street": "123 Daring Dr", "city":"Dicton","prov":"NB","postcode":"D2L4S8"}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> ali2 = ali[:]
+>>> ali2
+('Al G. Rhythm', ['Al', ''], '2000-01-01', {'street': '123 Awesome Ave', 'city': 'Anytown', 'prov': 'ON', 'postcode': 'A4B2C3'})
+>>> ali
+('Al G. Rhythm', ['Al', ''], '2000-01-01', {'street': '123 Awesome Ave', 'city': 'Anytown', 'prov': 'ON', 'postcode': 'A4B2C3'})
+>>> ali[1].append('Big Al')
+>>> ali
+('Al G. Rhythm', ['Al', '', 'Big Al'], '2000-01-01', {'street': '123 Awesome Ave', 'city': 'Anytown', 'prov': 'ON', 'postcode': 'A4B2C3'})
+>>> ali2
+('Al G. Rhythm', ['Al', '', 'Big Al'], '2000-01-01', {'street': '123 Awesome Ave', 'city': 'Anytown', 'prov': 'ON', 'postcode': 'A4B2C3'})
+>>> 
+KeyboardInterrupt
+>>> 
